@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="news.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    Uttar Pradesh State Equestrian Association
+  </div>
+
+  <header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="UPSEA Logo" />
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="nav-links">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="news.html">News & Updates</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h1>News & Articals</h1>
+    <p class="subtitle">
+      Exploring fresh perspectives through articles and insights    </p>
+
+    
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="n11.jpg" alt="U.P. Horse Show">
+        <div class="card-footer">
+          <span>U.P. Horse Show</span>
+          <span>2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n12.jpg" alt="Ghaziabad Horse Show">
+        <div class="card-footer">
+          <span>Ghaziabad Horse Show</span>
+          <span>2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n13.jpg" alt="Noida Horse Show">
+        <div class="card-footer">
+          <span>Noida Horse Show</span>
+          <span>2022</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n132.jpg" alt="Lucknow Horse Show">
+        <div class="card-footer">
+          <span>Lucknow Horse Show</span>
+          <span>2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n134.jpg" alt="Coaches & Grooms Clinic">
+        <div class="card-footer">
+          <span>Coaches & Grooms Clinic</span>
+          <span>2023</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n7.jpg" alt="Arena Polo">
+        <div class="card-footer">
+          <span>Arena Polo</span>
+          <span>2021</span>
+        </div>
+      </div>
+      
+      <div class="gallery-card">
+        <img src="n1.jpg" alt="U.P. Horse Show">
+        <div class="card-footer">
+          <span>U.P. Horse Show</span>
+          <span>2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n2.jpg" alt="Ghaziabad Horse Show">
+        <div class="card-footer">
+          <span>Ghaziabad Horse Show</span>
+          <span>2024</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n3.jpg" alt="Noida Horse Show">
+        <div class="card-footer">
+          <span>Noida Horse Show</span>
+          <span>2025</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n4.jpg" alt="Lucknow Horse Show">
+        <div class="card-footer">
+          <span>Lucknow Horse Show</span>
+          <span>2021</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n5.jpg" alt="Coaches & Grooms Clinic">
+        <div class="card-footer">
+          <span>Coaches & Grooms Clinic</span>
+          <span>2022</span>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="n6.jpg" alt="Arena Polo">
+        <div class="card-footer">
+          <span>Arena Polo</span>
+          <span>2023</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+   <!-- Contact Us -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <ul>
+        
+        <li><a href="upsea2021@gmail.com">✉️ upsea2021@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Links -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+       
+        <li><a href="https://www.facebook.com/people/Uttar-Pradesh-State-Equestrian-Association/100063476546736/?rdid=gM6WeTRoumDReVir&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14JSkiVyjrJ%2F" target="_blank"><i class="ri-facebook-circle-fill"></i> Facebook</a></li>
+       
+      </ul>
+    </div>
+    
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2021 UPSEA. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  // Mobile nav toggle
+const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  toggle.classList.toggle('open');
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const banner = document.querySelector('.top-banner');
+  if (!banner) return;
+
+  // store original offset
+  const origOffset = banner.getBoundingClientRect().top + window.scrollY;
+
+  function onScroll() {
+    if (window.scrollY > origOffset) {
+      if (!banner.classList.contains('stuck')) {
+        banner.classList.add('stuck');
+        // avoid layout jump: add same height padding to body
+        document.documentElement.style.setProperty('--banner-h', banner.offsetHeight + 'px');
+        document.body.style.paddingTop = banner.offsetHeight + 'px';
+      }
+    } else {
+      if (banner.classList.contains('stuck')) {
+        banner.classList.remove('stuck');
+        document.body.style.paddingTop = '0';
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    // recalc position on resize
+    // small timeout to allow layout changes
+    setTimeout(() => {
+      const top = banner.getBoundingClientRect().top + window.scrollY;
+      // do not reassign if banner already stuck
+      if (!banner.classList.contains('stuck')) {
+        // recalc origOffset for fresh start
+      }
+    }, 120);
+  });
+});
+</script>
+</body>
+</html>

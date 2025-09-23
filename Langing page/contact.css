@@ -1,0 +1,461 @@
+:root{
+  --purple: #6d4aa0;
+  --purple-strong: #5a3586;
+  --yellow: #ffbf00;
+  --card-border: rgba(109,74,160,0.18);
+  --radius: 18px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+body{ background:#fff; color:#111; }
+
+/* Top Banner */
+.top-banner {
+  background: #f4b400; /* yellow */
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo img {
+  height: 60px;
+  padding-left: 1px;
+  margin-top: 100px;
+}
+.navbar .logo img {
+  position: fixed;   /* makes it stick to viewport */
+  top: 10px;         /* distance from top */
+  left: 20px;        /* margin from left */
+  z-index: 1000;}
+
+.navbar ul {
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0px 60px;
+  align-items:center;
+}
+
+.navbar ul li a {
+  text-decoration:none;
+  color: black;
+  font-weight:600;
+  padding:6px 8px;
+  transition: color .22s ease, transform .18s ease;
+  position:relative;
+}
+.navbar ul li a::after{
+content:'';
+  height:2px;
+  background:#f4b400;
+  width:0%;
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  transition: width .22s ease;
+}
+
+.navbar li a:hover{ color:#f4b400; transform:translateY(-1px)}
+.navbar li a:hover::after{ width:100%}
+.navbar li a.active{ color:#f4b400; }
+.navbar.open{ display:flex}
+
+
+/* page title center with lines */
+.page-head{ text-align:center; margin:34px 0 30px; }
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  justify-content:center;
+  font-size:35px;
+  font-weight:700;
+}
+.section-title::before,
+.section-title::after{
+  content:'';
+  flex:1;
+  height:2px;
+  background:var(--yellow);
+  border-radius:2px;
+}
+
+/* contact panel */
+.contact-panel{ padding: 28px; }
+.contact-inner{
+  background:#fff;
+  border-radius:14px;
+  border:1px solid var(--card-border);
+  padding:50px;
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:28px;
+  align-items:start;
+  box-shadow:0 8px 28px rgba(109,74,160,0.03);
+  transition: transform 360ms, box-shadow 360ms;
+}
+.contact-inner:hover{
+  transform: translateY(-6px);
+  box-shadow:0 26px 60px rgba(109,74,160,0.08);
+}
+
+/* left column */
+.contact-info .intro{ font-size:18px; font-weight:400; margin-bottom:18px;margin-right: 18px; }
+.contact-links p{ margin:12px 0; font-weight:600;margin-bottom: 15px; }
+.contact-links a{ color:var(--purple-strong); text-decoration:underline; margin-bottom: 15px}
+
+.left-placeholder{
+  width:200px; height:140px;
+  margin-top:14px;
+  border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.left-placeholder img{ width:200px; height:110px; object-fit:cover }
+
+/* ---------- Hamburger Icon ---------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+.footer {
+  background:#f4b400 ;
+  color: #000000;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+.footer-section {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #000000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 8px 0;
+}
+.footer-section ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #ffffff;
+}
+.social-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  color: #000000;
+}
+/* ---------- Mobile Menu Styles ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hamburger animation when active */
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+/* Tablet View */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+* Mobile View */
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar .logo img {
+    height: 40px;
+    padding-left: 0;
+  }
+}
+
+/* scroll animation */
+.animate-on-scroll{ opacity:0; transform: translateY(18px); transition: opacity 520ms, transform 520ms; }
+.animate-on-scroll.in-view{ opacity:1; transform: translateY(0); }
+
+/* responsive */
+@media (max-width: 720px){
+  .contact-inner{ display:block; padding:20px; }
+  .contact-info{ margin-bottom:18px; }
+}
+/* ---------------- Responsive Fixes for Tablet and Mobile ---------------- */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px 20px;
+  }
+  .navbar .logo img {
+    height: 50px;
+    margin-top: 0;
+    position: static; /* remove fixed logo on tablet */
+  }
+
+  /* Contact panel */
+  .contact-inner {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+
+  .left-placeholder {
+    width: 100%;
+    height: 160px;
+    margin-top: 15px;
+  }
+  .left-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar .logo img {
+    height: 42px;
+    margin-top: 0;
+    position: static; /* prevent overlap */
+  }
+
+  /* Nav links */
+  .nav-links {
+    position: fixed;
+    top: 65px;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+    overflow-y: auto;
+  }
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-left: 0;
+  }
+  .nav-links ul li a {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  /* Contact panel */
+  .contact-inner {
+    display: block;
+    padding: 20px;
+  }
+  .contact-info {
+    margin-bottom: 18px;
+  }
+  .left-placeholder {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+  .left-placeholder img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  .footer-section {
+    margin: 10px 0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+  .contact-info .intro {
+    font-size: 15px;
+  }
+  .contact-links p {
+    font-size: 14px;
+  }
+}
+/* ===== Prevent horizontal scroll and make mobile nav fully off-screen ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;   /* still keep this */
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ensure media elements never overflow */
+img, video, iframe, embed, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-only: keep nav fully off canvas (no overflow) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;      /* remove it from normal flow */
+    top: 70px;
+    right: -260px;        /* fully off-screen (hidden) */
+    width: 220px;
+    height: calc(100vh - 80px);
+    padding: 18px;
+    background: #fff;
+    border-radius: 6px 0 0 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: right .28s ease-in-out, transform .28s ease-in-out;
+    transform: none !important; /* ensure no transform causes issues */
+    overflow-y: auto;
+    z-index: 9999;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* When open, bring it into view (exact 0 aligns to screen edge) */
+  .nav-links.open {
+    right: 0;
+  }
+
+  /* when the nav is open prevent body from shifting or scrolling horizontally */
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none; /* prevents weird swipe pans while nav open */
+  }
+}
+/* --- Mobile Menu Text Fixes (override) --- */
+@media (max-width: 768px) {
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;   /* align to left */
+    text-align: left;
+    width: 100%;
+    margin: 0;                 /* remove extra margin */
+    padding: 0;                /* remove extra padding */
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    margin: 4px 0;             /* less space between items */
+  }
+
+  .nav-links ul li a {
+    display: block;
+    width: 100%;
+    padding: 6px 8px;          /* tighter padding */
+    white-space: nowrap;       /* keep text in one line */
+  }
+}
+/* JS fallback: class added when banner becomes fixed */
+@media (max-width: 768px) {
+  .top-banner.stuck {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    width: 100%;
+  }
+  /* keep navbar below fixed banner */
+  .navbar {
+    position: sticky;
+    top: 48px; /* fallback padding if JS sets body padding (safe value) */
+    z-index: 1100;
+  }
+}

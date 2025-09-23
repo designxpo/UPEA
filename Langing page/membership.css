@@ -1,0 +1,488 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+body {
+  font-family: poppins;
+  background: #fff;
+  color: #222;
+}
+
+/* Top Banner */
+.top-banner {
+  background: #f4b400;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo img {
+  height: 60px;
+  padding-left: 1px;
+  margin-top: 100px;
+}
+.navbar .logo img {
+  position: fixed;   /* makes it stick to viewport */
+  top: 10px;         /* distance from top */
+  left: 20px;        /* margin from left */
+  z-index: 1000;}
+
+.navbar ul {
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0px 60px;
+  align-items:center;
+}
+
+.navbar ul li a {
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  padding:6px 8px;
+  transition: color .22s ease, transform .18s ease;
+  position:relative;
+}
+.navbar ul li a::after{
+content:'';
+  height:2px;
+  background:#f4b400;
+  width:0%;
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  transition: width .22s ease;
+}
+
+.navbar li a:hover{ color:#f4b400; transform:translateY(-1px)}
+.navbar li a:hover::after{ width:100%}
+.navbar li a.active{ color:#f4b400; }
+.navbar.open{ display:flex}
+
+
+/* Membership Section */
+.membership {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.membership h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f4b400;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Membership Grid */
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Membership Card */
+.membership-card {
+  border: 1.5px solid #7b5cb7;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 40px;
+  color: #f4b400;
+  margin-bottom: 15px;
+}
+
+.membership-card h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #7b5cb7;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #f4b400;
+}
+
+/* ---------- Navbar Base ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+  color: #f4b400;
+}
+
+/* ---------- Hamburger Icon ---------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+.footer {
+  background:#f4b400 ;
+  color: #000000;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+.footer-section {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #000000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 8px 0;
+}
+.footer-section ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #ffffff;
+}
+.social-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  color: #000000;
+}
+
+
+/* ✅ Mobile friendly footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+
+  .social-links li {
+    margin-right: 10px;
+  }
+}
+
+
+
+/* ---------- Mobile Menu Styles ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+@media (max-width: 700px) {
+  .nav-links ul {
+    flex-direction: column;
+    align-items: flex-start;   /* align to left */
+    text-align: left;
+    width: 100%;
+    margin: 0;                 /* remove extra margins */
+    padding: 0;                /* reset padding */
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    margin: 4px 0;             /* smaller space between items */
+  }
+
+  .nav-links ul li a {
+    display: block;
+    width: 100%;
+    padding: 6px 8px;          /* tighter padding (top/bottom, left/right) */
+    white-space: nowrap;       /* no text wrapping */
+  }
+}
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hamburger animation when active */
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+/* ---------- Responsive Fixes ---------- */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  .navbar .logo img {
+    height: 50px;
+    margin-top: 0;
+    position: static; /* stops fixed on tablet */
+  }
+
+  .membership h1 {
+    font-size: 28px;
+  }
+  .subtitle {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+
+  .membership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar .logo img {
+    height: 42px;
+    margin-top: 0;
+    position: static; /* no overlap */
+  }
+
+  /* Membership section */
+  .membership {
+    padding: 25px 12px;
+  }
+  .membership h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+
+  /* Membership cards */
+  .membership-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .membership-card {
+    padding: 18px 14px;
+  }
+  .membership-card h3 {
+    font-size: 15px;
+  }
+
+  /* Button */
+  .btn {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  .footer-section {
+    margin: 10px 0;
+  }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+  .membership h1 {
+    font-size: 26px;
+  }
+  .subtitle {
+    font-size: 11px;
+  }
+  .membership-card {
+    padding: 15px 12px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+}
+/* ===== Prevent horizontal scroll and make mobile nav fully off-screen ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;   /* still keep this */
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ensure media elements never overflow */
+img, video, iframe, embed, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-only: keep nav fully off canvas (no overflow) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;      /* remove it from normal flow */
+    top: 70px;
+    right: -260px;        /* fully off-screen (hidden) */
+    width: 220px;
+    height: calc(100vh - 80px);
+    padding: 18px;
+    background: #fff;
+    border-radius: 6px 0 0 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: right .28s ease-in-out, transform .28s ease-in-out;
+    transform: none !important; /* ensure no transform causes issues */
+    overflow-y: auto;
+    z-index: 9999;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* When open, bring it into view (exact 0 aligns to screen edge) */
+  .nav-links.open {
+    right: 0;
+  }
+
+  /* when the nav is open prevent body from shifting or scrolling horizontally */
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none; /* prevents weird swipe pans while nav open */
+  }
+}
+/* JS fallback: class added when banner becomes fixed */
+@media (max-width: 768px) {
+  .top-banner.stuck {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    width: 100%;
+  }
+  /* keep navbar below fixed banner */
+  .navbar {
+    position: sticky;
+    top: 48px; /* fallback padding if JS sets body padding (safe value) */
+    z-index: 1100;
+  }
+}
