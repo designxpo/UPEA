@@ -10,6 +10,21 @@ body {
   color: #222;
   background: #fff;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;  /* pushes footer down */
+}
+
+.footer {
+  margin-top: auto;  /* ensures footer sticks to bottom */
+}
+
 
 /* Top Banner */
 .top-banner {
@@ -107,24 +122,23 @@ content:'';
 
 /* Event Card */
 .event-card {
-  border: 1.5px solid #f4b400;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  border: 1.5px solid #f4b400;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
 }
 
 .card-top {
-  height: 160px;
-  overflow: hidden;      
+  height: auto;         /* remove fixed height */
+  overflow: visible;    /* allow image to show fully */
 }
 
 .card-top img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;    
+  height: auto;         /* keep image proportions */
+  object-fit: contain;  /* show full image without cropping */
   display: block;
 }
 
@@ -520,20 +534,34 @@ img, video, iframe, embed, svg {
     touch-action: none; /* prevents weird swipe pans while nav open */
   }
 }
-/* JS fallback: class added when banner becomes fixed */
 @media (max-width: 768px) {
-  .top-banner.stuck {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1200;
-    width: 100%;
-  }
-  /* keep navbar below fixed banner */
   .navbar {
-    position: sticky;
-    top: 48px; /* fallback padding if JS sets body padding (safe value) */
-    z-index: 1100;
+    position: relative;  /* no more sticky/fixed */
+    top: auto;
+    z-index: auto;
+    padding: 10px 15px;
+  }
+}
+
+/* --- Mobile View Fix --- */
+@media (max-width: 768px) {
+  .card-top {
+    height: auto !important;   /* override mobile fixed height */
+  }
+  .card-top img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-top {
+    height: auto !important;
+  }
+  .card-top img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
