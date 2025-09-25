@@ -213,6 +213,20 @@ content:'';
   padding:18px;
   text-align:center;
 }
+/* --- Fix for card height alignment --- */
+.cards-grid .card,
+.news-grid .news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px; /* adjust based on your design */
+}
+
+.card-footer,
+.news-card-footer {
+  margin-top: auto;
+}
+
 .card-footer h3{ margin:0 0 8px; font-size:18px; font-weight:700 }
 .card-footer p{ margin:0; color:rgba(255,255,255,0.92); font-size:13px var(--max-width) }
 
@@ -227,7 +241,7 @@ content:'';
   max-width:1000px;;
 }
 .stat{ text-align:center; flex:1 }
-.stat h1{ color:var(--yellow); font-size:30px; margin-bottom:6px; font-weight:800 }
+.stat h1{ color:var(--yellow); font-size:33px; margin-bottom:6px; font-weight:800 }
 .stat p{ color:var(--muted); margin:0; font-size:13px }
 
 /* vertical separators for desktop: add border-left/right on center stat */
@@ -702,11 +716,15 @@ a {
   .cards-grid, .news-grid { grid-template-columns: 1fr; }
 
   /* Upcoming event */
-  .event-title { font-size: 26px; }
-  .event-sub { font-size: 12px; }
-  .event-desc { font-size: 13px; }
+  .event-title { font-size: 26px; 
+  text-align: center;}
+  .event-sub { font-size: 12px;
+  text-align: center; }
+  .event-desc { font-size: 13px;
+  text-align: center; }
   .event-cta-text{
     font-size: 12px;
+    text-align: center;
   }
   .event-ctas{
     font-size: 15px;
@@ -766,20 +784,78 @@ img, video, iframe, embed, svg {
     touch-action: none; /* prevents weird swipe pans while nav open */
   }
 }
-/* JS fallback: class added when banner becomes fixed */
 @media (max-width: 768px) {
-  .top-banner.stuck {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1200;
-    width: 100%;
-  }
-  /* keep navbar below fixed banner */
   .navbar {
-    position: sticky;
-    top: 48px; /* fallback padding if JS sets body padding (safe value) */
-    z-index: 1100;
+    position: relative;  /* no more sticky/fixed */
+    top: auto;
+    z-index: auto;
+    padding: 10px 15px;
   }
+}
+/* === Fix for What We Do cards (show full image) === */
+.cards-grid .card {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #f4b400;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cards-grid .card .card-image {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.cards-grid .card .card-image img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.cards-grid .card .card-footer {
+  margin-top: auto;
+  background: #7b5cb7;
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  border-top: 1px solid #f4b400;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* === Fix for News cards (show full image) === */
+.news-grid .news-card {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #f4b400;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.news-grid .news-card img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.news-grid .news-card-footer {
+  margin-top: auto;
+  background: #7b5cb7;
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  border-top: 1px solid #f4b400;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.cards-grid,
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  justify-content: center; /* centers the cards horizontally */
+  justify-items: center;   /* ensures each card is centered */
 }

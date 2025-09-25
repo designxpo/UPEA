@@ -9,6 +9,21 @@
 
 *{box-sizing:border-box; margin:0; padding:0;}
 body{ background:#fff; color:#111; }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;  /* pushes footer down */
+}
+
+.footer {
+  margin-top: auto;  /* ensures footer sticks to bottom */
+}
+
 
 /* Top Banner */
 .top-banner {
@@ -442,20 +457,11 @@ img, video, iframe, embed, svg {
     white-space: nowrap;       /* keep text in one line */
   }
 }
-/* JS fallback: class added when banner becomes fixed */
 @media (max-width: 768px) {
-  .top-banner.stuck {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1200;
-    width: 100%;
-  }
-  /* keep navbar below fixed banner */
   .navbar {
-    position: sticky;
-    top: 48px; /* fallback padding if JS sets body padding (safe value) */
-    z-index: 1100;
+    position: relative;  /* no more sticky/fixed */
+    top: auto;
+    z-index: auto;
+    padding: 10px 15px;
   }
 }

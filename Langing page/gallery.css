@@ -10,6 +10,21 @@ body {
   color: #222;
   background: #fff;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;  /* pushes footer down */
+}
+
+.footer {
+  margin-top: auto;  /* ensures footer sticks to bottom */
+}
+
 
 /* Top Banner */
 .top-banner {
@@ -429,20 +444,35 @@ img, video, iframe, embed, svg {
     touch-action: none; /* prevents weird swipe pans while nav open */
   }
 }
-/* JS fallback: class added when banner becomes fixed */
 @media (max-width: 768px) {
-  .top-banner.stuck {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1200;
-    width: 100%;
-  }
-  /* keep navbar below fixed banner */
   .navbar {
-    position: sticky;
-    top: 48px; /* fallback padding if JS sets body padding (safe value) */
-    z-index: 1100;
+    position: relative;  /* no more sticky/fixed */
+    top: auto;
+    z-index: auto;
+    padding: 10px 15px;
   }
+}
+/* === Remove bottom part from gallery cards === */
+.gallery-card .card-footer {
+  display: none !important;
+}
+/* Remove card footer */
+.gallery-card .card-footer {
+  display: none !important;
+}
+
+/* Make images show full original size */
+.gallery-card {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+  width: 100%;          /* full width of the card */
+  height: auto;         /* auto height to maintain aspect ratio */
+  display: block;
+  object-fit: contain;  /* ensures whole image fits without cropping */
+  border-radius: 10px;
 }
